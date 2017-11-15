@@ -1,0 +1,11 @@
+- if @task.complete_changed
+  - if @task.complete
+    $('#edit_task_#{ @task.id }').appendTo('#complete_tasks');
+  - else
+    $('#edit_task_#{ @task.id }').appendTo('#incomplete_tasks');
+- else
+  $('#edit_task_#{ @task.id }').replaceWith('#{ j render(@task) }');
+  $('#other_edit_task_#{ @task.id }').remove();
+  $('#edit_task_#{ @task.id }').submitOnCheck();
+
+- @task.update!(complete_changed: false)

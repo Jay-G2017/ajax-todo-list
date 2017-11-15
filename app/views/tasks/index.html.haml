@@ -1,0 +1,19 @@
+%div.container
+  %div.headline
+    %h1 Check List
+    = link_to "New Task", new_task_path, id: "new_link", remote: true
+
+  %div.tasks_container
+    %div.tasks
+      %h2 Incomplete Tasks
+      %div.pagination= will_paginate @incomplete_tasks
+      %div#incomplete_tasks= render @incomplete_tasks
+      %div.pagination= will_paginate @incomplete_tasks
+
+    %div.tasks
+      %h2 Complete Tasks
+      %div#complete_tasks= render @complete_tasks
+
+%div#test
+  %p This is test
+%button#button_test test

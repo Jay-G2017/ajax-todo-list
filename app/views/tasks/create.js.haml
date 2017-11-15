@@ -1,0 +1,4 @@
+$('#other_new_task').remove();
+$('#new_link').show();
+$('#incomplete_tasks').append('#{ j render(@task) }');
+$('#edit_task_#{@task.id}').submitOnCheck();

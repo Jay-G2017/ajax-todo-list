@@ -1,0 +1,4 @@
+$('#new_link').after("#{j render("form")}");
+$('#other_new_task').dialog({ height: 100 });
+$('#new_link').hide();
+$('.ui-button[title="Close"]').click(function() { $('#new_link').show(); });

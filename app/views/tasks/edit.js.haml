@@ -1,0 +1,4 @@
+$('#edit_task_#{ @task.id } a').hide();
+$('#edit_task_#{ @task.id }').after('#{ j render('form') }');
+$('#other_edit_task_#{ @task.id }').dialog( { height: 100, width: 320 } );
+$('.ui-button[title="Close"]').click(function() { $('#edit_task_#{ @task.id } a').show(); });
